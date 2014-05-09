@@ -22,6 +22,10 @@
       {"firefox" ["firefox"
                   :stdout ".repl-firefox-out"
                   :stderr ".repl-firefox-err"]
+
+      "chrome" ["open" "-ga" "/Applications/Google Chrome.app"
+                  :stdout ".repl-chrome-out"
+                  :stderr ".repl-chrome-err"]
       ; Launch command for interacting with your ClojureScript at a REPL,
       ; without browsing to the app (a static HTML file is used).
       ;     $ lein trampoline cljsbuild repl-launch firefox-naked
@@ -57,6 +61,7 @@
       {:source-paths ["src-cljs"]
        :jar true
        :compiler {:output-to "resources/public/js/main-debug.js"
+                  :output-dir "resources/public/js"
                   :source-maps "resources/public/js/main-debug.js.map"
                   :optimizations :whitespace
                   :pretty-print true}}
