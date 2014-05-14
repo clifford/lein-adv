@@ -1,6 +1,6 @@
 (defproject cljsbuild-example-advanced "1.0.3"
   :description "https://github.com/emezeske/lein-cljsbuild/tree/1.0.3/example-projects/advanced"
-  :source-paths ["src-clj"]
+  :source-paths ["src/clj"]
   :dependencies [[org.clojure/clojure "1.5.1"]
                  [org.clojure/clojurescript "0.0-2197"
                   :exclusions [org.apache.ant/ant]]
@@ -59,7 +59,7 @@
       ; This build has the lowest level of optimizations, so it is
       ; useful when debugging the app.
       :dev
-      {:source-paths ["src-cljs"]
+      {:source-paths ["src/cljs"]
        :jar true
        :compiler {:optimizations :whitespace
                   :pretty-print true
@@ -70,7 +70,7 @@
       ; This build has the highest level of optimizations, so it is
       ; efficient when running the app in production.
       :prod
-      {:source-paths ["src-cljs"]
+      {:source-paths ["src/cljs"]
        :compiler {:output-to "resources/public/js/main.js"
                   :optimizations :advanced
                   :pretty-print false}}
@@ -78,7 +78,7 @@
       ; be run via PhantomJS.  See the phantom/unit-test.js file
       ; for details on how it's run.
       :test
-      {:source-paths ["src-cljs" "test-cljs"]
+      {:source-paths ["src/cljs" "test-cljs"]
        :compiler {:output-to "resources/private/js/unit-test.js"
                   :optimizations :whitespace
                   :pretty-print true}}}}

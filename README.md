@@ -53,7 +53,7 @@ run all tests.  To run the "unit" tests in isolation:
 The unit tests live in `test-cljs`.  They are written in ClojureScript, and thus must
 be compiled, so they have their own entry in the `:builds` configuration.  Note that
 all of the `:source-path` entries from the `:builds` are added to the classpath, so
-the tests can `:require` ClojureScript namespaces from, e.g., the `src-cljs` directory.
+the tests can `:require` ClojureScript namespaces from, e.g., the `src/cljs` directory.
 
 See the `phantom/unit-test.js` file for more details on how PhantomJS is configured to
 make this work.

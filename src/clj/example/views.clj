@@ -32,7 +32,7 @@
       [:title "REPL Demo"] ]
     [:body
      [:div "app"
-      [:h1 "generated from src-clj/example/views.clj"]
+      [:h1 "generated from src/clj/example/views.clj"]
       ;; [:script "http://fb.me/react-0.9.0.js"]
       ]]
     (include-js "http://fb.me/react-0.9.0.js")
