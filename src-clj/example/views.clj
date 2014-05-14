@@ -3,22 +3,43 @@
     [hiccup
       [page :refer [html5]]
       [element :refer [javascript-tag]]
-      [page :refer [include-js]]]))
+     [page :refer [include-js]]]
+    ;; [cemerick.austin.repls :refer (browser-connected-repl-js)]
+    [clojure.java.io :as io]
+    [net.cgrand.enlive-html :as enlive]))
 
 (defn- run-clojurescript [path init]
   (list
     (include-js path)
     (javascript-tag init)))
 
+;; consolidate on either hiccup or enlive
+;; (enlive/deftemplate page
+;;   (io/resource "public/index.html")
+;;   []
+;;   [:body] (enlive/append
+;;            (enlive/html [:script (browser-connected-repl-js)])))
+
+;; (run-clojurescript
+;;         "/js/main-debug.js"
+;;         "example.repl.connect()")
+
+;; (defn index-page []
+;;   (page))
 (defn index-page []
   (html5
     [:head
       [:title "REPL Demo"] ]
     [:body
+     [:div "app"
       [:h1 "generated from src-clj/example/views.clj"]
-      (run-clojurescript
+      ;; [:script "http://fb.me/react-0.9.0.js"]
+      ]]
+    (include-js "http://fb.me/react-0.9.0.js")
+    (run-clojurescript
         "/js/main-debug.js"
-        "example.hello.say_hello()")]))
+        "example.repl.connect()")
+          ))
 
 (defn repl-demo-page []
   (html5

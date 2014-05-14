@@ -17,8 +17,8 @@ var numbers = null;if (arguments.length > 0) {
   numbers = cljs.core.array_seq(Array.prototype.slice.call(arguments, 0),0);} 
 return add_some_numbers__delegate.call(this,numbers);};
 add_some_numbers.cljs$lang$maxFixedArity = 0;
-add_some_numbers.cljs$lang$applyTo = (function (arglist__15153){
-var numbers = cljs.core.seq(arglist__15153);
+add_some_numbers.cljs$lang$applyTo = (function (arglist__8496){
+var numbers = cljs.core.seq(arglist__8496);
 return add_some_numbers__delegate(numbers);
 });
 add_some_numbers.cljs$core$IFn$_invoke$arity$variadic = add_some_numbers__delegate;

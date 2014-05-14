@@ -6,7 +6,8 @@
                   :exclusions [org.apache.ant/ant]]
                  [org.clojure/core.async "0.1.278.0-76b25b-alpha"]
                  [compojure "1.1.6"]
-                 [hiccup "1.0.4"]]
+                 [hiccup "1.0.4"]
+                 [enlive "1.1.5"]]
   :plugins [[lein-cljsbuild "1.0.3"]
             [lein-ring "0.8.7"]]
   ; Enable the lein hooks for: clean, compile, test, and jar.
@@ -60,11 +61,12 @@
       :dev
       {:source-paths ["src-cljs"]
        :jar true
-       :compiler {:output-to "resources/public/js/main-debug.js"
+       :compiler {:optimizations :whitespace
+                  :pretty-print true
+                  :output-to "resources/public/js/main-debug.js"
                   :output-dir "resources/public/js"
-                  :source-maps "resources/public/js/main-debug.js.map"
-                  :optimizations :whitespace
-                  :pretty-print true}}
+                  :source-map "resources/public/js/main-debug.js.map"
+                  }}
       ; This build has the highest level of optimizations, so it is
       ; efficient when running the app in production.
       :prod
