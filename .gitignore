@@ -4,5 +4,4 @@
 	.repl-firefox-out
 	out/
 	repl/
-out/
-repl/
+        resources/public/js/
