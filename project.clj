@@ -7,7 +7,9 @@
                  [org.clojure/core.async "0.1.278.0-76b25b-alpha"]
                  [compojure "1.1.6"]
                  [hiccup "1.0.4"]
-                 [enlive "1.1.5"]]
+                 [enlive "1.1.5"]
+                 [om "0.6.2"]
+                 [com.facebook/react "0.9.0.1"]]
   :plugins [[lein-cljsbuild "1.0.3"]
             [lein-ring "0.8.7"]]
   ; Enable the lein hooks for: clean, compile, test, and jar.
