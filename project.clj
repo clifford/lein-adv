@@ -50,7 +50,7 @@
                         :stdout ".repl-phantom-naked-out"
                         :stderr ".repl-phantom-naked-err"]}
     :test-commands
-      ; Test command for running the unit tests in "test-cljs" (see below).
+      ; Test command for running the unit tests in "test/cljs" (see below).
       ;     $ lein cljsbuild test
       {"unit" ["phantomjs"
                "phantom/unit-test.js"
@@ -80,8 +80,9 @@
       ; be run via PhantomJS.  See the phantom/unit-test.js file
       ; for details on how it's run.
       :test
-      {:source-paths ["src/cljs" "test-cljs"]
+      {:source-paths ["src/cljs" "test/cljs"]
        :compiler {:output-to "resources/private/js/unit-test.js"
                   :optimizations :whitespace
                   :pretty-print true}}}}
-  :ring {:handler example.routes/app})
+  ;; :ring {:handler example.routes/app}
+  :ring {:handler ring.server/app}  )

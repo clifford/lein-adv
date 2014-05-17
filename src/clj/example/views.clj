@@ -6,7 +6,8 @@
      [page :refer [include-js]]]
     ;; [cemerick.austin.repls :refer (browser-connected-repl-js)]
     [clojure.java.io :as io]
-    [net.cgrand.enlive-html :as enlive]))
+    [net.cgrand.enlive-html :as enlive]
+    [cemerick.austin.repls :refer (browser-connected-repl-js)]))
 
 (defn- run-clojurescript [path init]
   (list
@@ -27,19 +28,25 @@
 ;; (defn index-page []
 ;;   (page))
 (defn index-page []
-  (html5
+  (let [repl-env (browser-connected-repl-js)]
+    (html5
     [:head
-      [:title "REPL Demo"] ]
+     [:title "REPL Demo"] ]
     [:body
      [:div {:id "app"}
       [:h1 "generated from src/clj/example/views.clj"]
       ;; [:script "http://fb.me/react-0.9.0.js"]
       ]]
     (include-js "http://fb.me/react-0.9.0.js")
+
     (run-clojurescript
-        "/js/main-debug.js"
-        "example.repl.connect()")
-          ))
+     "/js/main-debug.js"
+     repl-env)
+    [:script (browser-connected-repl-js)]
+    ;; (run-clojurescript
+    ;;     "/js/main-debug.js"
+    ;;     "example.core.connect()")
+    )))
 
 (defn repl-demo-page []
   (html5
