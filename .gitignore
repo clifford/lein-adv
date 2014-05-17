@@ -1,7 +1,8 @@
-	.repl-chrome-err
-	.repl-chrome-out
-	.repl-firefox-err
-	.repl-firefox-out
-	out/
-	repl/
-        resources/public/js/
+.repl-chrome-err
+.repl-chrome-out
+.repl-firefox-err
+.repl-firefox-out
+out/
+repl/
+resources/public/js/
+target/

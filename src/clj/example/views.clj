@@ -31,7 +31,7 @@
     [:head
       [:title "REPL Demo"] ]
     [:body
-     [:div "app"
+     [:div {:id "app"}
       [:h1 "generated from src/clj/example/views.clj"]
       ;; [:script "http://fb.me/react-0.9.0.js"]
       ]]

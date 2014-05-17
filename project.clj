@@ -16,7 +16,7 @@
   :hooks [leiningen.cljsbuild]
   :cljsbuild {
     ; Configure the REPL support; see the README.md file for more details.
-    :repl-listen-port 9000
+    :repl-listen-port 4555
     :repl-launch-commands
       ; Launch command for connecting the page of choice to the REPL.
       ; Only works if the page at URL automatically connects to the REPL,
